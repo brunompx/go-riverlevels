@@ -1,0 +1,8 @@
+
+mongodb atlas
+181.90.36.229
+brunodb
+01brunodb
+
+mongodb+srv://brunodb:01brunodb@cluster0.prki5dl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+

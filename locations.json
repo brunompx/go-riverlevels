@@ -1,0 +1,54 @@
+{
+    "locations": [
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "289"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "307"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "376"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "377"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "454"
+        },
+        {
+            "seriesId": "29542",
+            "siteCode": "5893",
+            "calId": "288"
+        },
+        {
+            "seriesId": "29542",
+            "siteCode": "5893",
+            "calId": "441"
+        },
+        {
+            "seriesId": "29542",
+            "siteCode": "5893",
+            "calId": "454"
+        },
+        {
+            "seriesId": "29542",
+            "siteCode": "5893",
+            "calId": "459"
+        },
+        {
+            "seriesId": "29642",
+            "siteCode": "1722",
+            "calId": "454"
+        }
+    ]
+}
