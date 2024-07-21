@@ -5,11 +5,13 @@ import (
 	"encoding/json"
 	"log"
 	"os"
+
+	"github.com/brunompx/go-riverlevels/cmd/model"
 )
 
-func SaveData(data []byte, seriesId string, siteCode string, calId string) {
+func SaveData(data []byte, loc model.Location) {
 
-	fileName := "data-" + seriesId + "-" + siteCode + "-" + calId + ".json"
+	fileName := "data-" + loc.SeriesId + "-" + loc.SiteCode + "-" + loc.CalId + ".json"
 
 	var prettyJSON bytes.Buffer
 	error := json.Indent(&prettyJSON, data, "", "\t")
