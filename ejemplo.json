@@ -1,0 +1,94 @@
+{
+    "requestHeader": {
+      "request": "datosProno",
+      "timeStart": "2024-03-29",
+      "timeEnd": "2024-07-21",
+      "seriesId": "3412",
+      "siteCode": "34",
+      "varId": "2",
+      "calId": "289",
+      "all": "false",
+      "format": "json"
+    },
+    "responseHeader": {
+      "estacion_nombre": "Rosario",
+      "calid": 289,
+      "creationTime": "2024-07-08T15:35:38-03:00",
+      "model_name": "tabprono",
+      "unit_abrev": "m",
+      "queryUrl": "request=datosProno&timeStart=2024-03-29&timeEnd=2024-07-21&seriesId=3412&siteCode=34&varId=2&calId=289&all=false&format=json",
+      "corid": 834000,
+      "unitid": 11,
+      "estacion_abrev": "ROSA",
+      "proc_name": "pronóstico",
+      "timeEnd": "20240721T000000",
+      "id": 3412,
+      "estacion_id": 34,
+      "request": "datosProno",
+      "cal_name": "tabprono_central",
+      "varid": 2,
+      "red_nombre": "alturas_prefe",
+      "responseTimestamp": "2024-07-08T15:35:38",
+      "lat": -32.9432699442268,
+      "forecastdate": "2024-07-05T00:00:00",
+      "lon": -60.6308206029857,
+      "timeStart": "20240329T000000",
+      "var_abrev": "altura"
+    },
+    "data": [
+      {
+        "prono_id": 885874914,
+        "timestart": "2024-07-05T00:00:00",
+        "timeend": "2024-07-05T00:00:00",
+        "valor": 1.3
+      },
+      {
+        "prono_id": 885874908,
+        "timestart": "2024-07-05T00:00:00",
+        "timeend": "2024-07-05T00:00:00",
+        "valor": 1.3
+      },
+      {
+        "prono_id": 885874857,
+        "timestart": "2024-07-05T00:00:00",
+        "timeend": "2024-07-05T00:00:00",
+        "valor": 1.3
+      },
+      {
+        "prono_id": 885874915,
+        "timestart": "2024-07-09T00:00:00",
+        "timeend": "2024-07-09T00:00:00",
+        "valor": 1.15
+      },
+      {
+        "prono_id": 885874909,
+        "timestart": "2024-07-09T00:00:00",
+        "timeend": "2024-07-09T00:00:00",
+        "valor": 1.51
+      },
+      {
+        "prono_id": 885874858,
+        "timestart": "2024-07-09T00:00:00",
+        "timeend": "2024-07-09T00:00:00",
+        "valor": 1.9
+      },
+      {
+        "prono_id": 885874916,
+        "timestart": "2024-07-16T00:00:00",
+        "timeend": "2024-07-16T00:00:00",
+        "valor": 0.9
+      },
+      {
+        "prono_id": 885874910,
+        "timestart": "2024-07-16T00:00:00",
+        "timeend": "2024-07-16T00:00:00",
+        "valor": 1.26
+      },
+      {
+        "prono_id": 885874859,
+        "timestart": "2024-07-16T00:00:00",
+        "timeend": "2024-07-16T00:00:00",
+        "valor": 1.6
+      }
+    ]
+  }
