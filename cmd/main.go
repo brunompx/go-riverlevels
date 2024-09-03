@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/brunompx/go-riverlevels/cmd/client"
-	"github.com/brunompx/go-riverlevels/cmd/db"
-	"github.com/brunompx/go-riverlevels/cmd/model"
+	"github.com/brunompx/go-riverlevels/client"
+	"github.com/brunompx/go-riverlevels/db"
+	"github.com/brunompx/go-riverlevels/model"
 )
 
 func main() {
@@ -18,6 +18,8 @@ func main() {
 	now := time.Now()
 
 	locations := getLocationsData()
+
+	fmt.Println("locations cargadas")
 
 	var wg sync.WaitGroup
 	wg.Add(len(locations.Locations))
@@ -37,7 +39,6 @@ func processLocation(loc model.Location, wg *sync.WaitGroup) {
 
 	responseData := client.GetData(loc)
 	db.SaveData(responseData, loc)
-
 }
 
 func getLocationsData() model.Locations {

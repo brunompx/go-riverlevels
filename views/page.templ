@@ -1,0 +1,33 @@
+package views
+
+templ Page(nav bool) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Angula</title>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+			<script src="https://unpkg.com/htmx.org@1.9.10" defer></script>
+		</head>
+		<body>
+			if nav {
+
+				<nav class="navbar is-primary">
+				
+					
+					<div id="navbar-links" class="navbar-menu">
+						<div class="navbar-start ml-auto">
+							<a class="navbar-item" href="/orders/edit">New Order</a>
+							<a class="navbar-item" href="/orders">Orders</a>
+							<a class="navbar-item" href="/products">Products</a>
+						</div>
+				
+					</div>
+				
+				</nav>
+			}
+			{ children... }
+		</body>
+	</html>
+}
