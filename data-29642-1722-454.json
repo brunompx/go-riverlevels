@@ -3,13 +3,13 @@
 	"mensaje": "No se encontro serie de pronostico para los parametros seleccionados",
 	"requestHeader": {
 		"request": "datosProno",
+		"calId": "454",
+		"timeStart": "2024-08-25",
+		"timeEnd": "2024-10-14",
 		"varId": "2",
 		"all": "false",
 		"format": "json",
 		"seriesId": "29642",
-		"siteCode": "1722",
-		"calId": "454",
-		"timeStart": "2024-08-24",
-		"timeEnd": "2024-10-13"
+		"siteCode": "1722"
 	}
 }

@@ -1,0 +1,94 @@
+{
+	"requestHeader": {
+		"request": "datosProno",
+		"varId": "2",
+		"all": "false",
+		"format": "json",
+		"seriesId": "3412",
+		"siteCode": "34",
+		"calId": "289",
+		"timeStart": "2024-08-25",
+		"timeEnd": "2024-10-14"
+	},
+	"responseHeader": {
+		"estacion_abrev": "ROSA",
+		"lon": -60.6308206029857,
+		"cal_name": "tabprono_central",
+		"lat": -32.9432699442268,
+		"estacion_nombre": "Rosario",
+		"id": 3412,
+		"creationTime": "2024-09-04T18:48:35-03:00",
+		"model_name": "tabprono",
+		"red_nombre": "alturas_prefe",
+		"responseTimestamp": "2024-09-04T18:48:35",
+		"timeEnd": "20241014T000000",
+		"timeStart": "20240825T000000",
+		"unitid": 11,
+		"request": "datosProno",
+		"queryUrl": "request=datosProno&varId=2&all=false&format=json&seriesId=3412&siteCode=34&calId=289&timeStart=2024-08-25&timeEnd=2024-10-14",
+		"calid": 289,
+		"forecastdate": "2024-09-03T00:00:00",
+		"estacion_id": 34,
+		"proc_name": "pronóstico",
+		"unit_abrev": "m",
+		"var_abrev": "altura",
+		"corid": 856982,
+		"varid": 2
+	},
+	"data": [
+		{
+			"prono_id": 904675783,
+			"timestart": "2024-09-03T00:00:00",
+			"timeend": "2024-09-03T00:00:00",
+			"valor": 1.09
+		},
+		{
+			"prono_id": 904675777,
+			"timestart": "2024-09-03T00:00:00",
+			"timeend": "2024-09-03T00:00:00",
+			"valor": 1.09
+		},
+		{
+			"prono_id": 904675726,
+			"timestart": "2024-09-03T00:00:00",
+			"timeend": "2024-09-03T00:00:00",
+			"valor": 1.09
+		},
+		{
+			"prono_id": 904675784,
+			"timestart": "2024-09-10T00:00:00",
+			"timeend": "2024-09-10T00:00:00",
+			"valor": 0.5
+		},
+		{
+			"prono_id": 904675778,
+			"timestart": "2024-09-10T00:00:00",
+			"timeend": "2024-09-10T00:00:00",
+			"valor": 0.78
+		},
+		{
+			"prono_id": 904675727,
+			"timestart": "2024-09-10T00:00:00",
+			"timeend": "2024-09-10T00:00:00",
+			"valor": 1.25
+		},
+		{
+			"prono_id": 904675785,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 0.05
+		},
+		{
+			"prono_id": 904675779,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 0.54
+		},
+		{
+			"prono_id": 904675728,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 1
+		}
+	]
+}
