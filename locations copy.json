@@ -1,0 +1,103 @@
+{
+    "locations": [
+        {
+            "seriesId": "1540",
+            "calId": "289",
+            "corId": "857041"
+        },
+
+
+
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "289"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "307"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "376"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "377"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "454"
+        },
+        {
+            "seriesId": "29542",
+            "siteCode": "5893",
+            "calId": "288"
+        },
+        {
+            "seriesId": "29542",
+            "siteCode": "5893",
+            "calId": "441"
+        },
+        {
+            "seriesId": "29542",
+            "siteCode": "5893",
+            "calId": "454"
+        },
+        {
+            "seriesId": "29542",
+            "siteCode": "5893",
+            "calId": "459"
+        },
+        {
+            "seriesId": "29642",
+            "siteCode": "1722",
+            "calId": "454"
+        },
+
+        {
+            "seriesId": "3523",
+            "siteCode": "20",
+            "calId": "289"
+        },
+        {
+            "seriesId": "3524",
+            "siteCode": "23",
+            "calId": "289"
+        },
+        {
+            "seriesId": "3526",
+            "siteCode": "24",
+            "calId": "289"
+        },
+        {
+            "seriesId": "3527",
+            "siteCode": "26",
+            "calId": "289"
+        },
+        {
+            "seriesId": "3408",
+            "siteCode": "29",
+            "calId": "289"
+        },
+        {
+            "seriesId": "1542",
+            "siteCode": "30",
+            "calId": "289"
+        },
+        {
+            "seriesId": "3412",
+            "siteCode": "34",
+            "calId": "289"
+        },
+        {
+            "seriesId": "3389",
+            "siteCode": "1770",
+            "calId": "441"
+        }
+    ]
+}

@@ -62,6 +62,7 @@ func buildUrl(baseUrl string, parameters map[string]string) string {
 		url.WriteString("=")
 		url.WriteString(value)
 	}
+	fmt.Println(url.String())
 	return url.String()
 }
 
@@ -72,13 +73,26 @@ func buildParametersMap(loc model.Location) map[string]string {
 
 	parameters := map[string]string{
 		"seriesId":  loc.SeriesId,
-		"siteCode":  loc.SiteCode,
-		"calId":     loc.CalId,
 		"timeStart": timeStart,
 		"timeEnd":   timeEnd,
-		"varId":     "2",
 		"all":       "false",
 		"format":    "json",
+	}
+
+	if len(loc.VarId) > 0 {
+		parameters["varId"] = loc.VarId
+	}
+
+	if len(loc.CalId) > 0 {
+		parameters["calId"] = loc.CalId
+	}
+
+	if len(loc.SiteCode) > 0 {
+		parameters["siteCode"] = loc.SiteCode
+	}
+
+	if len(loc.CorId) > 0 {
+		parameters["corId"] = loc.CorId
 	}
 
 	return parameters

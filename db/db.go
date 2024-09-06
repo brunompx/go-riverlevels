@@ -10,7 +10,7 @@ import (
 )
 
 func SaveData(data []byte, loc model.Location) {
-	fileName := "data-" + loc.SeriesId + "-" + loc.SiteCode + "-" + loc.CalId + ".json"
+	fileName := "data-" + loc.SeriesId + "-" + loc.SiteCode + "-" + loc.CorId + "-" + loc.CalId + ".json"
 	var prettyJSON bytes.Buffer
 	if len(data) > 0 {
 		error := json.Indent(&prettyJSON, data, "", "\t")

@@ -1,0 +1,248 @@
+{
+	"requestHeader": {
+		"request": "datosProno",
+		"timeStart": "2024-08-26",
+		"timeEnd": "2024-10-15",
+		"calId": "499",
+		"corId": "857008",
+		"all": "false",
+		"format": "json",
+		"seriesId": "34873"
+	},
+	"responseHeader": {
+		"model_id": 54,
+		"request": "datosProno",
+		"estacion_nombre": "Rosario",
+		"cal_name": "parana_estacional_sissa",
+		"red_nombre": "escalas Prefectura Nacional",
+		"calid": 499,
+		"forecastdate": "2024-09-04T11:00:00",
+		"unitid": 11,
+		"sitecode": 34,
+		"proc_nombre": "pronóstico",
+		"unit_nombre": "metros",
+		"seriesid": 34873,
+		"corid": 857008,
+		"queryUrl": "request=datosProno&timeStart=2024-08-26&timeEnd=2024-10-15&calId=499&corId=857008&all=false&format=json&seriesId=34873",
+		"var_nombre": "Altura hidrométrica media semanal",
+		"varid": 67,
+		"estacion_tabla": "alturas_prefe",
+		"timeEnd": "20241015T000000",
+		"timeStart": "20240826T000000",
+		"responseTimestamp": "2024-09-05T18:25:00",
+		"creationTime": "2024-09-05T18:25:00-03:00",
+		"cal_model": null
+	},
+	"data": [
+		{
+			"prono_id": 904686991,
+			"timestart": "2024-09-01T00:00:00",
+			"timeend": "2024-09-01T00:00:00",
+			"valor": 0.76
+		},
+		{
+			"prono_id": 904688125,
+			"timestart": "2024-09-01T00:00:00",
+			"timeend": "2024-09-01T00:00:00",
+			"valor": 0.32
+		},
+		{
+			"prono_id": 904688461,
+			"timestart": "2024-09-01T00:00:00",
+			"timeend": "2024-09-01T00:00:00",
+			"valor": 0.63
+		},
+		{
+			"prono_id": 904687012,
+			"timestart": "2024-09-01T00:00:00",
+			"timeend": "2024-09-01T00:00:00",
+			"valor": 1
+		},
+		{
+			"prono_id": 904688104,
+			"timestart": "2024-09-01T00:00:00",
+			"timeend": "2024-09-01T00:00:00",
+			"valor": 1.22
+		},
+		{
+			"prono_id": 904686992,
+			"timestart": "2024-09-08T00:00:00",
+			"timeend": "2024-09-08T00:00:00",
+			"valor": 0.65
+		},
+		{
+			"prono_id": 904688126,
+			"timestart": "2024-09-08T00:00:00",
+			"timeend": "2024-09-08T00:00:00",
+			"valor": 0.21
+		},
+		{
+			"prono_id": 904688462,
+			"timestart": "2024-09-08T00:00:00",
+			"timeend": "2024-09-08T00:00:00",
+			"valor": 0.52
+		},
+		{
+			"prono_id": 904687013,
+			"timestart": "2024-09-08T00:00:00",
+			"timeend": "2024-09-08T00:00:00",
+			"valor": 0.89
+		},
+		{
+			"prono_id": 904688105,
+			"timestart": "2024-09-08T00:00:00",
+			"timeend": "2024-09-08T00:00:00",
+			"valor": 1.11
+		},
+		{
+			"prono_id": 904686993,
+			"timestart": "2024-09-15T00:00:00",
+			"timeend": "2024-09-15T00:00:00",
+			"valor": 0.6
+		},
+		{
+			"prono_id": 904688127,
+			"timestart": "2024-09-15T00:00:00",
+			"timeend": "2024-09-15T00:00:00",
+			"valor": 0.1
+		},
+		{
+			"prono_id": 904688463,
+			"timestart": "2024-09-15T00:00:00",
+			"timeend": "2024-09-15T00:00:00",
+			"valor": 0.45
+		},
+		{
+			"prono_id": 904687014,
+			"timestart": "2024-09-15T00:00:00",
+			"timeend": "2024-09-15T00:00:00",
+			"valor": 0.84
+		},
+		{
+			"prono_id": 904688106,
+			"timestart": "2024-09-15T00:00:00",
+			"timeend": "2024-09-15T00:00:00",
+			"valor": 1.12
+		},
+		{
+			"prono_id": 904686994,
+			"timestart": "2024-09-22T00:00:00",
+			"timeend": "2024-09-22T00:00:00",
+			"valor": 0.69
+		},
+		{
+			"prono_id": 904688128,
+			"timestart": "2024-09-22T00:00:00",
+			"timeend": "2024-09-22T00:00:00",
+			"valor": 0.09
+		},
+		{
+			"prono_id": 904688464,
+			"timestart": "2024-09-22T00:00:00",
+			"timeend": "2024-09-22T00:00:00",
+			"valor": 0.5
+		},
+		{
+			"prono_id": 904687015,
+			"timestart": "2024-09-22T00:00:00",
+			"timeend": "2024-09-22T00:00:00",
+			"valor": 0.94
+		},
+		{
+			"prono_id": 904688107,
+			"timestart": "2024-09-22T00:00:00",
+			"timeend": "2024-09-22T00:00:00",
+			"valor": 1.26
+		},
+		{
+			"prono_id": 904686995,
+			"timestart": "2024-09-29T00:00:00",
+			"timeend": "2024-09-29T00:00:00",
+			"valor": 0.86
+		},
+		{
+			"prono_id": 904688129,
+			"timestart": "2024-09-29T00:00:00",
+			"timeend": "2024-09-29T00:00:00",
+			"valor": 0.2
+		},
+		{
+			"prono_id": 904688465,
+			"timestart": "2024-09-29T00:00:00",
+			"timeend": "2024-09-29T00:00:00",
+			"valor": 0.63
+		},
+		{
+			"prono_id": 904687016,
+			"timestart": "2024-09-29T00:00:00",
+			"timeend": "2024-09-29T00:00:00",
+			"valor": 1.16
+		},
+		{
+			"prono_id": 904688108,
+			"timestart": "2024-09-29T00:00:00",
+			"timeend": "2024-09-29T00:00:00",
+			"valor": 1.53
+		},
+		{
+			"prono_id": 904686996,
+			"timestart": "2024-10-06T00:00:00",
+			"timeend": "2024-10-06T00:00:00",
+			"valor": 1.02
+		},
+		{
+			"prono_id": 904688130,
+			"timestart": "2024-10-06T00:00:00",
+			"timeend": "2024-10-06T00:00:00",
+			"valor": 0.28
+		},
+		{
+			"prono_id": 904688466,
+			"timestart": "2024-10-06T00:00:00",
+			"timeend": "2024-10-06T00:00:00",
+			"valor": 0.77
+		},
+		{
+			"prono_id": 904687017,
+			"timestart": "2024-10-06T00:00:00",
+			"timeend": "2024-10-06T00:00:00",
+			"valor": 1.37
+		},
+		{
+			"prono_id": 904688109,
+			"timestart": "2024-10-06T00:00:00",
+			"timeend": "2024-10-06T00:00:00",
+			"valor": 1.78
+		},
+		{
+			"prono_id": 904686997,
+			"timestart": "2024-10-13T00:00:00",
+			"timeend": "2024-10-13T00:00:00",
+			"valor": 1.19
+		},
+		{
+			"prono_id": 904688131,
+			"timestart": "2024-10-13T00:00:00",
+			"timeend": "2024-10-13T00:00:00",
+			"valor": 0.41
+		},
+		{
+			"prono_id": 904688467,
+			"timestart": "2024-10-13T00:00:00",
+			"timeend": "2024-10-13T00:00:00",
+			"valor": 0.95
+		},
+		{
+			"prono_id": 904687018,
+			"timestart": "2024-10-13T00:00:00",
+			"timeend": "2024-10-13T00:00:00",
+			"valor": 1.59
+		},
+		{
+			"prono_id": 904688110,
+			"timestart": "2024-10-13T00:00:00",
+			"timeend": "2024-10-13T00:00:00",
+			"valor": 2.05
+		}
+	]
+}
