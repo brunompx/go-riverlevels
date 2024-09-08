@@ -44,7 +44,7 @@ func GetData(loc model.Location) []byte {
 		log.Fatal(err)
 	}
 
-	fmt.Println(resp.Status)
+	//fmt.Println(resp.Status)
 	//fmt.Println(string(responseBody))
 
 	return responseBody
@@ -62,7 +62,7 @@ func buildUrl(baseUrl string, parameters map[string]string) string {
 		url.WriteString("=")
 		url.WriteString(value)
 	}
-	fmt.Println(url.String())
+	//fmt.Println(url.String())
 	return url.String()
 }
 
