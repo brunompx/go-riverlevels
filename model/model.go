@@ -1,6 +1,8 @@
 package model
 
-import "time"
+import (
+	"time"
+)
 
 type Location struct {
 	SeriesId string `json:"seriesId"`
@@ -50,38 +52,38 @@ type ForecastLevel struct {
 
 // Struct for responseHeader in the json
 type ResponseHeader struct {
-	ID                int       `json:"id"` // Primary key
-	VarId             int       `json:"varid"`
-	Request           string    `json:"request"`
-	EstacionTabla     string    `json:"estacion_tabla"`
-	CorId             int       `json:"corid"`
-	TimeEnd           string    `json:"timeEnd"`
-	SeriesId          int       `json:"seriesid"`
-	ProcNombre        string    `json:"proc_nombre"`
-	UnitId            int       `json:"unitid"`
-	SiteCode          int       `json:"sitecode"`
-	EstacionNombre    string    `json:"estacion_nombre"`
-	RedNombre         string    `json:"red_nombre"`
-	CalId             int       `json:"calid"`
-	CalName           string    `json:"cal_name"`
-	ResponseTimestamp time.Time `json:"responseTimestamp"`
-	TimeStart         string    `json:"timeStart"`
-	VarNombre         string    `json:"var_nombre"`
-	CalModel          string    `json:"cal_model"`
-	QueryUrl          string    `json:"queryUrl"`
-	ModelId           int       `json:"model_id"`
-	CreationTime      string    `json:"creationTime"`
-	UnitNombre        string    `json:"unit_nombre"`
-	ForecastDate      time.Time `json:"forecastdate"`
+	ID                int    `json:"id"` // Primary key
+	VarId             int    `json:"varid"`
+	Request           string `json:"request"`
+	EstacionTabla     string `json:"estacion_tabla"`
+	CorId             int    `json:"corid"`
+	TimeEnd           string `json:"timeEnd"`
+	SeriesId          int    `json:"seriesid"`
+	ProcNombre        string `json:"proc_nombre"`
+	UnitId            int    `json:"unitid"`
+	SiteCode          int    `json:"sitecode"`
+	EstacionNombre    string `json:"estacion_nombre"`
+	RedNombre         string `json:"red_nombre"`
+	CalId             int    `json:"calid"`
+	CalName           string `json:"cal_name"`
+	ResponseTimestamp string `json:"responseTimestamp"`
+	TimeStart         string `json:"timeStart"`
+	VarNombre         string `json:"var_nombre"`
+	CalModel          string `json:"cal_model"`
+	QueryUrl          string `json:"queryUrl"`
+	ModelId           int    `json:"model_id"`
+	CreationTime      string `json:"creationTime"`
+	UnitNombre        string `json:"unit_nombre"`
+	ForecastDate      string `json:"forecastdate"`
 }
 
 // Struct for data entries in the json
 type DataEntry struct {
-	ID        int       `json:"id"` // Primary key
-	PronoId   int64     `json:"prono_id"`
-	TimeStart time.Time `json:"timestart"`
-	TimeEnd   time.Time `json:"timeend"`
-	Valor     float64   `json:"valor"`
+	ID        int     `json:"id"` // Primary key
+	PronoId   int64   `json:"prono_id"`
+	TimeStart string  `json:"timestart"`
+	TimeEnd   string  `json:"timeend"`
+	Valor     float64 `json:"valor"`
 }
 
 // Struct that encompasses the whole JSON structure for unmarshalling

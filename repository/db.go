@@ -1,4 +1,4 @@
-package db
+package repository
 
 import (
 	"bytes"
@@ -19,7 +19,7 @@ func SaveData(data []byte, loc model.Location) {
 			log.Fatal(error)
 		}
 
-		toStructs(prettyJSON.Bytes())
+		processJson(prettyJSON.Bytes())
 
 		err := os.WriteFile(fileName, prettyJSON.Bytes(), 0644)
 		if err != nil {
@@ -41,4 +41,18 @@ func toStructs(jsonBytes []byte) {
 
 	// Print the result
 	fmt.Printf("%+v\n", forecastResponse)
+}
+
+func processJson(jsonBytes []byte) {
+
+	var forecastResponse model.ForecastResponse
+	err2 := json.Unmarshal(jsonBytes, &forecastResponse)
+	if err2 != nil {
+		fmt.Println(err2)
+	}
+
+	normalized := forecastResponse.NormalizeToForecast()
+
+	fmt.Printf("%+v\n", normalized)
+
 }

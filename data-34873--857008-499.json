@@ -1,0 +1,14 @@
+{
+	"title": "Mensaje de error",
+	"mensaje": "No se encontro serie de pronostico para los parametros seleccionados",
+	"requestHeader": {
+		"request": "datosProno",
+		"all": "false",
+		"format": "json",
+		"seriesId": "34873",
+		"timeStart": "2024-08-30",
+		"timeEnd": "2024-10-19",
+		"calId": "499",
+		"corId": "857008"
+	}
+}
