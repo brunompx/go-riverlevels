@@ -1,0 +1,93 @@
+{
+	"requestHeader": {
+		"request": "datosProno",
+		"seriesId": "3412",
+		"timeStart": "2024-08-26",
+		"timeEnd": "2024-10-15",
+		"varId": "2",
+		"calId": "289",
+		"corId": "857049",
+		"all": "false",
+		"format": "json"
+	},
+	"responseHeader": {
+		"varid": 2,
+		"request": "datosProno",
+		"estacion_tabla": "alturas_prefe",
+		"corid": 857049,
+		"timeEnd": "20241015T000000",
+		"seriesid": 3412,
+		"proc_nombre": "pronóstico",
+		"unitid": 11,
+		"sitecode": 34,
+		"estacion_nombre": "Rosario",
+		"red_nombre": "escalas Prefectura Nacional",
+		"calid": 289,
+		"cal_name": "tabprono_central",
+		"responseTimestamp": "2024-09-05T18:25:00",
+		"timeStart": "20240826T000000",
+		"var_nombre": "Altura hidrométrica",
+		"cal_model": "tabprono",
+		"queryUrl": "request=datosProno&seriesId=3412&timeStart=2024-08-26&timeEnd=2024-10-15&varId=2&calId=289&corId=857049&all=false&format=json",
+		"model_id": 60,
+		"creationTime": "2024-09-05T18:25:00-03:00",
+		"unit_nombre": "metros",
+		"forecastdate": "2024-09-03T00:00:00"
+	},
+	"data": [
+		{
+			"prono_id": 904704811,
+			"timestart": "2024-09-03T00:00:00",
+			"timeend": "2024-09-03T00:00:00",
+			"valor": 1.09
+		},
+		{
+			"prono_id": 904704805,
+			"timestart": "2024-09-03T00:00:00",
+			"timeend": "2024-09-03T00:00:00",
+			"valor": 1.09
+		},
+		{
+			"prono_id": 904704754,
+			"timestart": "2024-09-03T00:00:00",
+			"timeend": "2024-09-03T00:00:00",
+			"valor": 1.09
+		},
+		{
+			"prono_id": 904704812,
+			"timestart": "2024-09-10T00:00:00",
+			"timeend": "2024-09-10T00:00:00",
+			"valor": 0.5
+		},
+		{
+			"prono_id": 904704806,
+			"timestart": "2024-09-10T00:00:00",
+			"timeend": "2024-09-10T00:00:00",
+			"valor": 0.78
+		},
+		{
+			"prono_id": 904704755,
+			"timestart": "2024-09-10T00:00:00",
+			"timeend": "2024-09-10T00:00:00",
+			"valor": 1.25
+		},
+		{
+			"prono_id": 904704813,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 0.05
+		},
+		{
+			"prono_id": 904704807,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 0.54
+		},
+		{
+			"prono_id": 904704756,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 1
+		}
+	]
+}
