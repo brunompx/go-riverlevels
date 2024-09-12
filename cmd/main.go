@@ -13,12 +13,16 @@ import (
 	"github.com/brunompx/go-riverlevels/database"
 	"github.com/brunompx/go-riverlevels/handlers"
 	"github.com/brunompx/go-riverlevels/model"
+	"github.com/brunompx/go-riverlevels/repository"
+	"github.com/brunompx/go-riverlevels/service"
 	"github.com/brunompx/go-riverlevels/storage"
 )
 
 func main() {
 
 	db := database.GetDatabase()
+	repositories := repository.InitRepositories(db)
+	services := service.InitServices(repositories)
 
 	now := time.Now()
 	fmt.Println("locations cargadas")
