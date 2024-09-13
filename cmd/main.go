@@ -6,16 +6,13 @@ import (
 	"io"
 	"net/http"
 	"os"
-	"sync"
-	"time"
 
-	"github.com/brunompx/go-riverlevels/client"
 	"github.com/brunompx/go-riverlevels/database"
 	"github.com/brunompx/go-riverlevels/handlers"
+	"github.com/brunompx/go-riverlevels/ingestor"
 	"github.com/brunompx/go-riverlevels/model"
 	"github.com/brunompx/go-riverlevels/repository"
 	"github.com/brunompx/go-riverlevels/service"
-	"github.com/brunompx/go-riverlevels/storage"
 )
 
 func main() {
@@ -24,12 +21,9 @@ func main() {
 	repositories := repository.InitRepositories(db)
 	services := service.InitServices(repositories)
 
-	now := time.Now()
-	fmt.Println("locations cargadas")
-	//retrieveData()
-	fmt.Println("Tardo en totral: ", time.Since(now))
+	ingestor.IngestData(services)
 
-	processRosarioFile()
+	//processRosarioFile()
 
 	router := http.NewServeMux()
 	router.HandleFunc("GET /", handlers.HandleHome)
@@ -41,41 +35,6 @@ func main() {
 	//	Handler: router,
 	//}
 	//server.ListenAndServe()
-}
-
-func retrieveData() {
-	locations := getLocationsData()
-
-	var wg sync.WaitGroup
-	wg.Add(len(locations.Locations))
-	for _, location := range locations.Locations {
-		loc := location
-		go processLocation(loc, &wg)
-	}
-	wg.Wait()
-}
-
-func processLocation(loc model.Location, wg *sync.WaitGroup) {
-
-	defer wg.Done()
-
-	responseData := client.GetData(loc)
-	storage.SaveData(responseData, loc)
-}
-
-func getLocationsData() model.Locations {
-
-	jsonFile, err := os.Open("locations.json")
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	fmt.Println("Successfully Opened locations.json")
-	defer jsonFile.Close()
-	byteValue, _ := io.ReadAll(jsonFile)
-	var locations model.Locations
-	json.Unmarshal(byteValue, &locations)
-	return locations
 }
 
 // just testing unmarshall to struct /////////////////////////////////////////////////////////////////////////////////////////////////
