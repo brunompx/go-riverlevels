@@ -14,6 +14,12 @@ import (
 )
 
 func IngestData(services *service.Service) {
+
+	//TODO esto es un test borrar despues
+	fore := repository.ProcessSavedFileFile()
+	services.ForecastService.Save(&fore)
+	// fin TODO esto es un test borrar despues
+
 	locations := getLocationsData()
 
 	now := time.Now()

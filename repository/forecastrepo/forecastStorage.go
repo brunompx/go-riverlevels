@@ -16,6 +16,10 @@ func NewForecastRepo(db *gorm.DB) *ForecastRepo {
 }
 
 func (r *ForecastRepo) Save(forecast *model.Forecast) error {
+	result := r.db.Create(&forecast)
+	if result.Error != nil {
+		return result.Error
+	}
 	return nil
 }
 

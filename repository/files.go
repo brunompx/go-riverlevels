@@ -3,6 +3,8 @@ package repository
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
+	"io"
 	"log"
 	"os"
 
@@ -22,4 +24,24 @@ func SaveDataAsJsonFile(data []byte, loc model.Location) {
 			log.Fatal(err)
 		}
 	}
+}
+
+func ProcessSavedFileFile() model.Forecast {
+
+	jsonFile, err := os.Open("rosario2.json")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	defer jsonFile.Close()
+	byteValue, _ := io.ReadAll(jsonFile)
+	var forecastResponse model.ForecastResponse
+	err2 := json.Unmarshal(byteValue, &forecastResponse)
+	if err2 != nil {
+		fmt.Println(err2)
+	}
+
+	normalized := forecastResponse.NormalizeToForecast()
+
+	return normalized
 }
