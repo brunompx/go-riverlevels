@@ -8,16 +8,16 @@ import (
 	"sync"
 	"time"
 
+	"github.com/brunompx/go-riverlevels/ingestor/retriever"
 	"github.com/brunompx/go-riverlevels/model"
-	"github.com/brunompx/go-riverlevels/repository"
 	"github.com/brunompx/go-riverlevels/service"
 )
 
 func IngestData(services *service.Service) {
 
 	//TODO esto es un test borrar despues
-	fore := repository.ProcessSavedFileFile()
-	services.ForecastService.Save(&fore)
+	//fore := repository.ProcessSavedFileFile()
+	//services.ForecastService.Save(&fore)
 	// fin TODO esto es un test borrar despues
 
 	locations := getLocationsData()
@@ -40,26 +40,12 @@ func processLocation(loc model.Location, services *service.Service, wg *sync.Wai
 
 	defer wg.Done()
 
-	responseData := GetData(loc)
-	forecast := responseToForecast(responseData)
+	forecastResponse := retriever.GetData(loc)
+	forecast := forecastResponse.NormalizeToForecast()
 	services.ForecastService.Save(&forecast)
-	repository.SaveDataAsJsonFile(responseData, loc)
-}
 
-func responseToForecast(jsonBytes []byte) model.Forecast {
-
-	//unmarshall json response to ForecastResponse
-	var forecastResponse model.ForecastResponse
-	err2 := json.Unmarshal(jsonBytes, &forecastResponse)
-	if err2 != nil {
-		fmt.Println(err2)
-	}
-
-	//transform to Forecast struct
-	normalized := forecastResponse.NormalizeToForecast()
-
-	return normalized
-
+	//save data from file, remove this test when we can get consistent data from alerta.ina.gob.ar
+	//repository.SaveDataAsJsonFile(responseData, loc)
 }
 
 func getLocationsData() model.Locations {

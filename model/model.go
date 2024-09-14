@@ -10,6 +10,8 @@ type Location struct {
 	CalId    string `json:"calId"`
 	CorId    string `json:"corId"`
 	VarId    string `json:"varId"`
+	Format   string `json:"format"`
+	All      string `json:"all"`
 }
 
 type Locations struct {

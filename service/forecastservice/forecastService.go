@@ -16,8 +16,10 @@ func (s *ForecastService) Save(forecast *model.Forecast) error {
 	//	return err
 	//}
 
-	if err := s.forecastRepository.Save(forecast); err != nil {
-		return fmt.Errorf("failed to save forecast, error: %w", err)
+	if forecast.ForecastSets != nil && len(forecast.ForecastSets) > 0 {
+		if err := s.forecastRepository.Save(forecast); err != nil {
+			return fmt.Errorf("failed to save forecast, error: %w", err)
+		}
 	}
 
 	return nil

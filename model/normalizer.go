@@ -6,6 +6,10 @@ import (
 )
 
 func (response *ForecastResponse) NormalizeToForecast() Forecast {
+	if len(response.Data) == 0 {
+		fmt.Println("SIN DATOS!!")
+		return Forecast{}
+	}
 	forecast := Forecast{
 		VarId:          response.ResponseHeader.VarId,
 		CorId:          response.ResponseHeader.CorId,

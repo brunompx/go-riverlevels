@@ -1,10 +1,8 @@
-package ingestor
+package retriever
 
 import (
+	"encoding/json"
 	"fmt"
-	"io"
-	"log"
-	"net/http"
 	"strings"
 	"time"
 
@@ -23,31 +21,38 @@ const BaseUrlProno = "https://alerta.ina.gob.ar/pub/datos/datosProno"
 // https://alerta.ina.gob.ar/pub/datos/datos&timeStart=2023-07-19&timeEnd=2024-07-17&seriesId=34&siteCode=34&varId=2&format=json
 const BaseUrl = "https://alerta.ina.gob.ar/pub/datos/datos"
 
-func GetData(loc model.Location) []byte {
-
+func GetData(loc model.Location) model.ForecastResponse {
 	parameters := buildParametersMap(loc)
+	url := buildUrl(BaseUrlProno, parameters)
 
-	client := &http.Client{}
-	req, err := http.NewRequest(http.MethodGet, buildUrl(BaseUrlProno, parameters), nil)
-	if err != nil {
-		log.Fatal(err)
+	response := GetDataFromAPI(url)
+
+	forecastResponse := unmarshallForecastResponse(response)
+
+	if len(forecastResponse.Data) > 0 {
+		return forecastResponse
+	} else {
+		return unmarshallForecastResponse(GetDataFromWeb(url))
 	}
 
-	resp, err := client.Do(req)
-	if err != nil {
-		fmt.Println("Errored when sending request to the server")
-	}
-
-	defer resp.Body.Close()
-	responseBody, err := io.ReadAll(resp.Body)
-	if err != nil {
-		log.Fatal(err)
-	}
+	//GetDataFromWeb(url)
 
 	//fmt.Println(resp.Status)
 	//fmt.Println(string(responseBody))
 
-	return responseBody
+	//return model.ForecastResponse{}
+}
+
+func unmarshallForecastResponse(jsonBytes []byte) model.ForecastResponse {
+
+	//unmarshall json response to ForecastResponse
+	var forecastResponse model.ForecastResponse
+	err2 := json.Unmarshal(jsonBytes, &forecastResponse)
+	if err2 != nil {
+		fmt.Println(err2)
+	}
+
+	return forecastResponse
 }
 
 // NOTE: not working adding params with question mark ?
@@ -93,6 +98,14 @@ func buildParametersMap(loc model.Location) map[string]string {
 
 	if len(loc.CorId) > 0 {
 		parameters["corId"] = loc.CorId
+	}
+
+	if len(loc.Format) > 0 {
+		parameters["format"] = loc.Format
+	}
+
+	if len(loc.All) > 0 {
+		parameters["all"] = loc.All
 	}
 
 	return parameters
