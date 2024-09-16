@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/brunompx/go-riverlevels/model"
+	"github.com/brunompx/go-riverlevels/repository"
 )
 
 // web:
@@ -30,17 +31,20 @@ func GetData(loc model.Location) model.ForecastResponse {
 	forecastResponse := unmarshallForecastResponse(response)
 
 	if len(forecastResponse.Data) > 0 {
+
+		//Save data TO file, for manual validation, delete afterwards
+		repository.SaveDataAsJsonFile(response, loc)
+
 		return forecastResponse
-	} else {
-		return unmarshallForecastResponse(GetDataFromWeb(url))
 	}
 
-	//GetDataFromWeb(url)
+	responseWeb := GetDataFromWeb(url)
 
-	//fmt.Println(resp.Status)
-	//fmt.Println(string(responseBody))
+	//Save data TO file, for manual validation, delete afterwards
+	repository.SaveDataAsJsonFile(responseWeb, loc)
 
-	//return model.ForecastResponse{}
+	return unmarshallForecastResponse(responseWeb)
+
 }
 
 func unmarshallForecastResponse(jsonBytes []byte) model.ForecastResponse {

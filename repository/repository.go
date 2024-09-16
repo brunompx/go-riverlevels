@@ -11,6 +11,7 @@ type ForecastRepository interface {
 	FindByID(id int) (*model.Forecast, error)
 	Save(forecast *model.Forecast) error
 	Update(forecast *model.Forecast) error
+	FindForecast(forecast *model.Forecast) (model.Forecast, error)
 }
 
 type Repositories struct {

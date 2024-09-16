@@ -8,7 +8,8 @@ import (
 )
 
 func GetDataFromWeb(url string) []byte {
-
+	//fmt.Println("inicio GetDataFromWeb")
+	//fmt.Println(url)
 	// create context
 	ctx, cancel := chromedp.NewContext(context.Background())
 	defer cancel()
@@ -20,7 +21,8 @@ func GetDataFromWeb(url string) []byte {
 		chromedp.Text(`body`, &data, chromedp.NodeVisible),
 	)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("Error: ", err)
 	}
+	//fmt.Println("fin GetDataFromWeb")
 	return []byte(data)
 }

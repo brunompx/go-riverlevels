@@ -15,7 +15,7 @@ import (
 
 func IngestData(services *service.Service) {
 
-	//TODO esto es un test borrar despues
+	//TODO save data from file, remove this test when we can get consistent data from alerta.ina.gob.ar
 	//fore := repository.ProcessSavedFileFile()
 	//services.ForecastService.Save(&fore)
 	// fin TODO esto es un test borrar despues
@@ -43,9 +43,6 @@ func processLocation(loc model.Location, services *service.Service, wg *sync.Wai
 	forecastResponse := retriever.GetData(loc)
 	forecast := forecastResponse.NormalizeToForecast()
 	services.ForecastService.Save(&forecast)
-
-	//save data from file, remove this test when we can get consistent data from alerta.ina.gob.ar
-	//repository.SaveDataAsJsonFile(responseData, loc)
 }
 
 func getLocationsData() model.Locations {

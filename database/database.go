@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/brunompx/go-riverlevels/model"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -32,9 +33,9 @@ func GetDatabase() *gorm.DB {
 
 	initStorage(db)
 
-	// db.AutoMigrate(&model.Forecast{})
-	// db.AutoMigrate(&model.ForecastSet{})
-	// db.AutoMigrate(&model.ForecastLevel{})
+	db.AutoMigrate(&model.Forecast{})
+	db.AutoMigrate(&model.ForecastSet{})
+	db.AutoMigrate(&model.ForecastLevel{})
 
 	return db
 }
