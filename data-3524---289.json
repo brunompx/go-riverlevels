@@ -1,0 +1,92 @@
+{
+	"requestHeader": {
+		"request": "datosProno",
+		"timeStart": "2024-09-06",
+		"timeEnd": "2024-10-26",
+		"calId": "289",
+		"all": "false",
+		"format": "json",
+		"seriesId": "3524"
+	},
+	"responseHeader": {
+		"varid": 2,
+		"cal_name": "tabprono_central",
+		"calid": 289,
+		"proc_name": "pronóstico",
+		"estacion_nombre": "Goya",
+		"lat": -29.14376844,
+		"creationTime": "2024-09-16T22:12:40-03:00",
+		"lon": -59.27303952,
+		"corid": 857373,
+		"unitid": 11,
+		"queryUrl": "request=datosProno&timeStart=2024-09-06&timeEnd=2024-10-26&calId=289&all=false&format=json&seriesId=3524",
+		"unit_abrev": "m",
+		"request": "datosProno",
+		"var_abrev": "altura",
+		"forecastdate": "2024-09-13T00:00:00",
+		"estacion_abrev": "GOYA",
+		"timeStart": "20240906T000000",
+		"red_nombre": "alturas_prefe",
+		"timeEnd": "20241026T000000",
+		"estacion_id": 23,
+		"model_name": "tabprono",
+		"id": 3524,
+		"responseTimestamp": "2024-09-16T22:12:40"
+	},
+	"data": [
+		{
+			"prono_id": 904891936,
+			"timestart": "2024-09-13T00:00:00",
+			"timeend": "2024-09-13T00:00:00",
+			"valor": 1.16
+		},
+		{
+			"prono_id": 904891930,
+			"timestart": "2024-09-13T00:00:00",
+			"timeend": "2024-09-13T00:00:00",
+			"valor": 1.16
+		},
+		{
+			"prono_id": 904891942,
+			"timestart": "2024-09-13T00:00:00",
+			"timeend": "2024-09-13T00:00:00",
+			"valor": 1.16
+		},
+		{
+			"prono_id": 904891937,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 0.9
+		},
+		{
+			"prono_id": 904891931,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 1.3
+		},
+		{
+			"prono_id": 904891943,
+			"timestart": "2024-09-17T00:00:00",
+			"timeend": "2024-09-17T00:00:00",
+			"valor": 1.65
+		},
+		{
+			"prono_id": 904891938,
+			"timestart": "2024-09-24T00:00:00",
+			"timeend": "2024-09-24T00:00:00",
+			"valor": 0.85
+		},
+		{
+			"prono_id": 904891932,
+			"timestart": "2024-09-24T00:00:00",
+			"timeend": "2024-09-24T00:00:00",
+			"valor": 1.19
+		},
+		{
+			"prono_id": 904891944,
+			"timestart": "2024-09-24T00:00:00",
+			"timeend": "2024-09-24T00:00:00",
+			"valor": 1.55
+		}
+	]
+}

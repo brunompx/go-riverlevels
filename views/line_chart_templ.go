@@ -9,7 +9,7 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import (
-	"github.com/brunompx/go-riverlevels/components"
+	"github.com/brunompx/go-riverlevels/views/components"
 	"github.com/go-echarts/go-echarts/v2/charts"
 )
 

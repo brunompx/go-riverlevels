@@ -1,0 +1,164 @@
+{
+	"requestHeader": {
+		"request": "datosProno",
+		"calId": "434",
+		"all": "false",
+		"format": "json",
+		"seriesId": "26217",
+		"timeStart": "2024-09-06",
+		"timeEnd": "2024-10-26"
+	},
+	"responseHeader": {
+		"lon": -60.7002319185745,
+		"calid": 434,
+		"cal_name": "altura_media_semanal",
+		"timeStart": "20240906T000000",
+		"estacion_abrev": "SAFE",
+		"proc_name": "pronóstico",
+		"timeEnd": "20241026T000000",
+		"corid": 857343,
+		"creationTime": "2024-09-16T22:12:42-03:00",
+		"forecastdate": "2024-09-12T00:00:00",
+		"estacion_nombre": "Santa Fe",
+		"request": "datosProno",
+		"red_nombre": "alturas_prefe",
+		"responseTimestamp": "2024-09-16T22:12:42",
+		"lat": -31.6514772196376,
+		"id": 26217,
+		"unit_abrev": "m",
+		"queryUrl": "request=datosProno&calId=434&all=false&format=json&seriesId=26217&timeStart=2024-09-06&timeEnd=2024-10-26",
+		"model_name": null,
+		"var_abrev": "alturamediasemana",
+		"varid": 67,
+		"unitid": 11,
+		"estacion_id": 30
+	},
+	"data": [
+		{
+			"prono_id": 904880524,
+			"timestart": "2024-09-12T00:00:00",
+			"timeend": "2024-09-19T00:00:00",
+			"valor": 0.73
+		},
+		{
+			"prono_id": 904880722,
+			"timestart": "2024-09-12T00:00:00",
+			"timeend": "2024-09-19T00:00:00",
+			"valor": 0.73
+		},
+		{
+			"prono_id": 904880469,
+			"timestart": "2024-09-12T00:00:00",
+			"timeend": "2024-09-19T00:00:00",
+			"valor": 0.73
+		},
+		{
+			"prono_id": 904880525,
+			"timestart": "2024-09-19T00:00:00",
+			"timeend": "2024-09-26T00:00:00",
+			"valor": 0.65
+		},
+		{
+			"prono_id": 904880723,
+			"timestart": "2024-09-19T00:00:00",
+			"timeend": "2024-09-26T00:00:00",
+			"valor": 0.66
+		},
+		{
+			"prono_id": 904880470,
+			"timestart": "2024-09-19T00:00:00",
+			"timeend": "2024-09-26T00:00:00",
+			"valor": 0.63
+		},
+		{
+			"prono_id": 904880526,
+			"timestart": "2024-09-26T00:00:00",
+			"timeend": "2024-10-03T00:00:00",
+			"valor": 0.69
+		},
+		{
+			"prono_id": 904880724,
+			"timestart": "2024-09-26T00:00:00",
+			"timeend": "2024-10-03T00:00:00",
+			"valor": 0.75
+		},
+		{
+			"prono_id": 904880471,
+			"timestart": "2024-09-26T00:00:00",
+			"timeend": "2024-10-03T00:00:00",
+			"valor": 0.64
+		},
+		{
+			"prono_id": 904880527,
+			"timestart": "2024-10-03T00:00:00",
+			"timeend": "2024-10-10T00:00:00",
+			"valor": 0.69
+		},
+		{
+			"prono_id": 904880725,
+			"timestart": "2024-10-03T00:00:00",
+			"timeend": "2024-10-10T00:00:00",
+			"valor": 0.8
+		},
+		{
+			"prono_id": 904880472,
+			"timestart": "2024-10-03T00:00:00",
+			"timeend": "2024-10-10T00:00:00",
+			"valor": 0.61
+		},
+		{
+			"prono_id": 904880528,
+			"timestart": "2024-10-10T00:00:00",
+			"timeend": "2024-10-17T00:00:00",
+			"valor": 0.67
+		},
+		{
+			"prono_id": 904880726,
+			"timestart": "2024-10-10T00:00:00",
+			"timeend": "2024-10-17T00:00:00",
+			"valor": 0.83
+		},
+		{
+			"prono_id": 904880473,
+			"timestart": "2024-10-10T00:00:00",
+			"timeend": "2024-10-17T00:00:00",
+			"valor": 0.54
+		},
+		{
+			"prono_id": 904880529,
+			"timestart": "2024-10-17T00:00:00",
+			"timeend": "2024-10-24T00:00:00",
+			"valor": 0.67
+		},
+		{
+			"prono_id": 904880727,
+			"timestart": "2024-10-17T00:00:00",
+			"timeend": "2024-10-24T00:00:00",
+			"valor": 0.88
+		},
+		{
+			"prono_id": 904880474,
+			"timestart": "2024-10-17T00:00:00",
+			"timeend": "2024-10-24T00:00:00",
+			"valor": 0.51
+		},
+		{
+			"prono_id": 904880530,
+			"timestart": "2024-10-24T00:00:00",
+			"timeend": "2024-10-31T00:00:00",
+			"valor": 0.65
+		},
+		{
+			"prono_id": 904880728,
+			"timestart": "2024-10-24T00:00:00",
+			"timeend": "2024-10-31T00:00:00",
+			"valor": 0.9
+		},
+		{
+			"prono_id": 904880475,
+			"timestart": "2024-10-24T00:00:00",
+			"timeend": "2024-10-31T00:00:00",
+			"valor": 0.45
+		}
+	]
+}

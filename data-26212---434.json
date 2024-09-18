@@ -1,0 +1,37 @@
+{
+	"requestHeader": {
+		"request": "datosProno",
+		"all": "false",
+		"format": "json",
+		"seriesId": "26212",
+		"timeStart": "2024-09-06",
+		"timeEnd": "2024-10-26",
+		"calId": "434"
+	},
+	"responseHeader": {
+		"unitid": 11,
+		"queryUrl": "request=datosProno&all=false&format=json&seriesId=26212&timeStart=2024-09-06&timeEnd=2024-10-26&calId=434",
+		"forecastdate": "2024-09-12T00:00:00",
+		"timeStart": "20240906T000000",
+		"proc_name": "pronóstico",
+		"timeEnd": "20241026T000000",
+		"red_nombre": "alturas_prefe",
+		"estacion_abrev": "GOYA",
+		"model_name": null,
+		"creationTime": "2024-09-16T22:12:42-03:00",
+		"var_abrev": "alturamediasemana",
+		"unit_abrev": "m",
+		"lat": -29.14376844,
+		"corid": 857343,
+		"estacion_id": 23,
+		"lon": -59.27303952,
+		"calid": 434,
+		"responseTimestamp": "2024-09-16T22:12:42",
+		"request": "datosProno",
+		"estacion_nombre": "Goya",
+		"id": 26212,
+		"varid": 67,
+		"cal_name": "altura_media_semanal"
+	},
+	"data": []
+}
