@@ -64,3 +64,29 @@ func stringToTime(stringValue string) time.Time {
 	}
 	return parsed
 }
+
+func (response *MeasureResponse) NormalizeToMeasure() Measure {
+	if len(response.Data) == 0 {
+		fmt.Println("SIN DATOS!!")
+		return Measure{}
+	}
+	measure := Measure{
+		SeriesId:          response.ResponseHeader.SeriesID,
+		SiteCode:          response.ResponseHeader.SiteCode,
+		EstacionAbrev:     response.ResponseHeader.SiteMetadata.EstacionAbrev,
+		ResponseTimestamp: stringToTime(response.ResponseHeader.ResponseTimestamp),
+		RedId:             response.ResponseHeader.SiteMetadata.RedID,
+	}
+	measureLevels := []MeasureLevel{}
+	for _, entry := range response.Data {
+		measureLevel := MeasureLevel{
+			ObsId:       entry.ObsId,
+			Valor:       entry.Valor,
+			TimeMeasure: stringToTime(entry.TimeStart),
+		}
+		measureLevels = append(measureLevels, measureLevel)
+	}
+	measure.MeasureLevels = measureLevels
+
+	return measure
+}

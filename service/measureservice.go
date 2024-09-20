@@ -1,4 +1,4 @@
-package taskservice
+package service
 
 import (
 	"fmt"
@@ -7,11 +7,11 @@ import (
 	"github.com/brunompx/go-riverlevels/repository"
 )
 
-type ForecastService struct {
-	forecastRepository repository.ForecastRepository // interface of the repository, not implementation
+type MeasureService struct {
+	measureRepository repository.MeasureRepository // interface of the repository, not implementation
 }
 
-func (s *ForecastService) Save(forecast *model.Forecast) error {
+func (s *MeasureService) Save(forecast *model.Forecast) error {
 
 	//TODO: validate
 	fmt.Println("-------------------------------------------------------")
@@ -34,7 +34,7 @@ func (s *ForecastService) Save(forecast *model.Forecast) error {
 	}
 
 	if forecast.ForecastSets != nil && len(forecast.ForecastSets) > 0 {
-		if err := s.forecastRepository.Save(forecast); err != nil {
+		if err := s.measureRepository.Save(forecast); err != nil {
 			return fmt.Errorf("failed to save forecast, error: %w", err)
 		}
 	}
@@ -42,36 +42,36 @@ func (s *ForecastService) Save(forecast *model.Forecast) error {
 	return nil
 }
 
-func (s *ForecastService) FindForecast(forecast *model.Forecast) *model.Forecast {
-	fore, err := s.forecastRepository.FindForecast(forecast)
+func (s *MeasureService) FindForecast(forecast *model.Forecast) *model.Forecast {
+	fore, err := s.measureRepository.FindForecast(forecast)
 	if err != nil {
 		fmt.Errorf("failed to save forecast, error: %w", err)
 	}
 	return &fore
 }
 
-func (s *ForecastService) FindAll() ([]*model.Forecast, error) {
-	forecasts, err := s.forecastRepository.FindAll()
+func (s *MeasureService) FindAll() ([]*model.Forecast, error) {
+	forecasts, err := s.measureRepository.FindAll()
 	if err != nil {
 		return nil, fmt.Errorf("failed to save forecast, error: %w", err)
 	}
 	return forecasts, err
 }
 
-func (s *ForecastService) FindByID(id int) (*model.Forecast, error) {
+func (s *MeasureService) FindByID(id int) (*model.Forecast, error) {
 
 	return nil, nil
 }
 
-func (s *ForecastService) Update(forecast *model.Forecast) error {
+func (s *MeasureService) Update(forecast *model.Forecast) error {
 	return nil
 }
 
 // Returns a new instance of the service.
-func NewForecastService(
-	forecastRepository repository.ForecastRepository,
-) *ForecastService {
-	return &ForecastService{
-		forecastRepository: forecastRepository,
+func NewMeasureService(
+	measureRepository repository.ForecastRepository,
+) *MeasureService {
+	return &MeasureService{
+		measureRepository: measureRepository,
 	}
 }

@@ -36,6 +36,8 @@ func GetDatabase() *gorm.DB {
 	db.AutoMigrate(&model.Forecast{})
 	db.AutoMigrate(&model.ForecastSet{})
 	db.AutoMigrate(&model.ForecastLevel{})
+	db.AutoMigrate(&model.Measure{})
+	db.AutoMigrate(&model.MeasureLevel{})
 
 	return db
 }

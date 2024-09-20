@@ -1,4 +1,4 @@
-package forecastrepo
+package repository
 
 import (
 	"fmt"

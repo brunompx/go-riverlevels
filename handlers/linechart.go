@@ -1,8 +1,10 @@
 package handlers
 
 import (
+	"fmt"
 	"math/rand"
 	"net/http"
+	"time"
 
 	"github.com/brunompx/go-riverlevels/views"
 	"github.com/go-echarts/go-echarts/v2/charts"
@@ -103,16 +105,52 @@ func lineForecat() *charts.Line {
 	sals2 := []opts.LineData{{Value: 2}, {Value: 1}, {Value: 3}, {Value: 3}, {Value: 4}, {Value: 5}, {Value: 7}, {Value: 7}, {Value: 8}, {Value: 10}, {Value: 10}, {Value: 11}}
 	sals3 := []opts.LineData{{Value: 2}, {Value: 1}, {Value: 3}, {Value: 3}, {Value: 4}, {Value: 5}, {Value: 5}, {Value: 6}, {Value: 7}, {Value: 8}, {Value: 8}, {Value: 9}}
 	sals4 := []opts.LineData{{Value: 2}, {Value: 1}, {Value: 3}, {Value: 3}, {Value: 4}, {Value: 5}, {Value: 4}, {Value: 5}, {Value: 6}, {Value: 7}, {Value: 6}, {Value: 5}}
-	// Put data into instance
-	line.SetXAxis([]string{"a", "b", "c", "f", "h", "j", "e", "r", "t", "y", "hu", "ji"})
 
-	line.AddSeries("Category A", sals4).
-		AddSeries("Category b", sals2).AddSeries("Category c", sals3).AddSeries("Category d", sals1).
-		SetSeriesOptions(charts.WithLineChartOpts(
-			opts.LineChart{Smooth: opts.Bool(true), ShowSymbol: opts.Bool(true), SymbolSize: 15, Symbol: "diamond"},
-		))
+	//xaxis := opts.XAxis{Data: []string{"a", "b", "c", "f", "h", "j", "e", "r", "t", "y", "hu", "ji"}}
+	t1 := stringT("2024-02-13")
+	t2 := stringT("2024-02-14")
+	t3 := stringT("2024-02-15")
+	t4 := stringT("2024-02-16")
+	t5 := stringT("2024-02-17")
+	t6 := stringT("2024-02-18")
+	t7 := stringT("2024-02-19")
+	t8 := stringT("2024-02-20")
+	t9 := stringT("2024-02-21")
+	t10 := stringT("2024-02-22")
+	t11 := stringT("2024-02-23")
+	t12 := stringT("2024-02-24")
+
+	//line.SetGlobalOptions(charts.WithXAxisOpts(
+	//	opts.XAxis{Type: "time"},
+	//))
+
+	// Put data into instance
+	//line.SetXAxis([]string{"a", "b", "c", "f", "h", "j", "e", "r", "t", "y", "hu", "ji"})
+	//line.SetXAxis([]time.Time{t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12})
+	line.SetXAxis([]string{t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12})
+
+	line.AddSeries("Category A", sals4)
+	line.AddSeries("Category b", sals2)
+	line.AddSeries("Category c", sals3)
+	line.AddSeries("Category Romeo", sals1)
+
+	line.SetSeriesOptions(charts.WithLineChartOpts(
+		opts.LineChart{Smooth: opts.Bool(true), ShowSymbol: opts.Bool(true), SymbolSize: 15, Symbol: "diamond"},
+	))
 
 	return line
+}
+
+func stringTw(stringValue string) time.Time {
+	parsed, err := time.Parse("2006-01-02", stringValue)
+	if err != nil {
+		fmt.Println("Error parsing string date: ", err)
+	}
+	return parsed
+}
+
+func stringT(stringValue string) string {
+	return stringValue
 }
 
 func generateFLineItems() []opts.LineData {
