@@ -1,4 +1,4 @@
-package model
+package types
 
 import (
 	"time"
@@ -101,7 +101,7 @@ type ForecastResponse struct {
 }
 
 //////////////////////////////////////////////////////////////////
-//Strucst for actuare measurements
+//Strucst for actual measurements
 
 // Table: forecasts
 type Measure struct {

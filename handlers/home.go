@@ -3,9 +3,9 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/brunompx/go-riverlevels/views"
+	"github.com/brunompx/go-riverlevels/templates/pages"
 )
 
 func HandleHome(w http.ResponseWriter, r *http.Request) {
-	views.Home().Render(r.Context(), w)
+	pages.Home().Render(r.Context(), w)
 }

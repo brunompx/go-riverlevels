@@ -8,10 +8,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/brunompx/go-riverlevels/model"
+	"github.com/brunompx/go-riverlevels/types"
 )
 
-func SaveDataAsJsonFile(data []byte, loc model.Location) {
+func SaveDataAsJsonFile(data []byte, loc types.Location) {
 	fileName := "data-" + loc.SeriesId + "-" + loc.SiteCode + "-" + loc.CorId + "-" + loc.CalId + ".json"
 	var prettyJSON bytes.Buffer
 	if len(data) > 0 {
@@ -26,7 +26,7 @@ func SaveDataAsJsonFile(data []byte, loc model.Location) {
 	}
 }
 
-func ProcessSavedFileFile() model.Forecast {
+func ProcessSavedFileFile() types.Forecast {
 
 	jsonFile, err := os.Open("rosario2.json")
 	if err != nil {
@@ -35,7 +35,7 @@ func ProcessSavedFileFile() model.Forecast {
 
 	defer jsonFile.Close()
 	byteValue, _ := io.ReadAll(jsonFile)
-	var forecastResponse model.ForecastResponse
+	var forecastResponse types.ForecastResponse
 	err2 := json.Unmarshal(byteValue, &forecastResponse)
 	if err2 != nil {
 		fmt.Println(err2)

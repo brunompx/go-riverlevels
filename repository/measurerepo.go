@@ -3,7 +3,7 @@ package repository
 import (
 	"fmt"
 
-	"github.com/brunompx/go-riverlevels/model"
+	"github.com/brunompx/go-riverlevels/types"
 	"gorm.io/gorm"
 )
 
@@ -17,7 +17,7 @@ func NewMeasureRepo(db *gorm.DB) *MeasureRepo {
 	}
 }
 
-func (r *MeasureRepo) Save(forecast *model.Forecast) error {
+func (r *MeasureRepo) Save(forecast *types.Forecast) error {
 	result := r.db.Create(&forecast)
 	if result.Error != nil {
 		return result.Error
@@ -25,25 +25,25 @@ func (r *MeasureRepo) Save(forecast *model.Forecast) error {
 	return nil
 }
 
-func (r *MeasureRepo) FindForecast(forecast *model.Forecast) (model.Forecast, error) {
+func (r *MeasureRepo) FindForecast(forecast *types.Forecast) (types.Forecast, error) {
 
 	fmt.Println("Busco?: ", forecast.EstacionNombre)
 	fmt.Println("Busco?: ", forecast.CorId)
 
-	var fore model.Forecast
+	var fore types.Forecast
 	//r.db.Where("name = ? AND age >= ?", "jinzhu", "22").First(&fore)
 	r.db.Where(forecast).First(&fore)
 	return fore, nil
 }
 
-func (r *MeasureRepo) FindAll() ([]*model.Forecast, error) {
+func (r *MeasureRepo) FindAll() ([]*types.Forecast, error) {
 	return nil, nil
 }
 
-func (r *MeasureRepo) FindByID(id int) (*model.Forecast, error) {
+func (r *MeasureRepo) FindByID(id int) (*types.Forecast, error) {
 	return nil, nil
 }
 
-func (r *MeasureRepo) Update(forecast *model.Forecast) error {
+func (r *MeasureRepo) Update(forecast *types.Forecast) error {
 	return nil
 }

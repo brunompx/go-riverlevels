@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/brunompx/go-riverlevels/views"
+	"github.com/brunompx/go-riverlevels/templates/pages"
 	"github.com/go-echarts/go-echarts/v2/charts"
 	"github.com/go-echarts/go-echarts/v2/opts"
 )
@@ -22,7 +22,7 @@ func HandleLineChart(w http.ResponseWriter, r *http.Request) {
 	//chart := lineSymbolsb()
 	chart := lineForecat()
 
-	views.Linechart(chart).Render(r.Context(), w)
+	pages.Linechart(chart).Render(r.Context(), w)
 }
 
 func lineSymbolsb() *charts.Line {

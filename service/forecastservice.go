@@ -3,15 +3,15 @@ package service
 import (
 	"fmt"
 
-	"github.com/brunompx/go-riverlevels/model"
 	"github.com/brunompx/go-riverlevels/repository"
+	"github.com/brunompx/go-riverlevels/types"
 )
 
 type ForecastService struct {
 	forecastRepository repository.ForecastRepository // interface of the repository, not implementation
 }
 
-func (s *ForecastService) Save(forecast *model.Forecast) error {
+func (s *ForecastService) Save(forecast *types.Forecast) error {
 
 	//TODO: validate
 	fmt.Println("-------------------------------------------------------")
@@ -19,7 +19,7 @@ func (s *ForecastService) Save(forecast *model.Forecast) error {
 	fmt.Println("Antes de busc: ", forecast.EstacionNombre)
 	fmt.Println("Antes de busc: ", forecast.CorId)
 
-	var existingForecast model.Forecast
+	var existingForecast types.Forecast
 
 	if forecast.CorId != 0 && forecast.EstacionNombre != "" {
 		existingForecast = *s.FindForecast(forecast)
@@ -42,7 +42,7 @@ func (s *ForecastService) Save(forecast *model.Forecast) error {
 	return nil
 }
 
-func (s *ForecastService) FindForecast(forecast *model.Forecast) *model.Forecast {
+func (s *ForecastService) FindForecast(forecast *types.Forecast) *types.Forecast {
 	fore, err := s.forecastRepository.FindForecast(forecast)
 	if err != nil {
 		fmt.Errorf("failed to save forecast, error: %w", err)
@@ -50,7 +50,7 @@ func (s *ForecastService) FindForecast(forecast *model.Forecast) *model.Forecast
 	return &fore
 }
 
-func (s *ForecastService) FindAll() ([]*model.Forecast, error) {
+func (s *ForecastService) FindAll() ([]*types.Forecast, error) {
 	forecasts, err := s.forecastRepository.FindAll()
 	if err != nil {
 		return nil, fmt.Errorf("failed to save forecast, error: %w", err)
@@ -58,12 +58,12 @@ func (s *ForecastService) FindAll() ([]*model.Forecast, error) {
 	return forecasts, err
 }
 
-func (s *ForecastService) FindByID(id int) (*model.Forecast, error) {
+func (s *ForecastService) FindByID(id int) (*types.Forecast, error) {
 
 	return nil, nil
 }
 
-func (s *ForecastService) Update(forecast *model.Forecast) error {
+func (s *ForecastService) Update(forecast *types.Forecast) error {
 	return nil
 }
 

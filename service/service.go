@@ -1,15 +1,15 @@
 package service
 
 import (
-	"github.com/brunompx/go-riverlevels/model"
 	"github.com/brunompx/go-riverlevels/repository"
+	"github.com/brunompx/go-riverlevels/types"
 )
 
 type ForecastServiceInt interface {
-	FindAll() ([]*model.Forecast, error)
-	FindByID(id int) (*model.Forecast, error)
-	Save(forecast *model.Forecast) error
-	Update(forecast *model.Forecast) error
+	FindAll() ([]*types.Forecast, error)
+	FindByID(id int) (*types.Forecast, error)
+	Save(forecast *types.Forecast) error
+	Update(forecast *types.Forecast) error
 }
 
 // Service storage of all services.

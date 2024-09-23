@@ -9,7 +9,8 @@ import (
 	"time"
 
 	"github.com/brunompx/go-riverlevels/ingestor/retriever"
-	"github.com/brunompx/go-riverlevels/model"
+	"github.com/brunompx/go-riverlevels/types"
+
 	"github.com/brunompx/go-riverlevels/service"
 )
 
@@ -36,7 +37,7 @@ func IngestData(services *service.Service) {
 	fmt.Println("Tardo en totral: ", time.Since(now))
 }
 
-func processLocation(loc model.Location, services *service.Service, wg *sync.WaitGroup) {
+func processLocation(loc types.Location, services *service.Service, wg *sync.WaitGroup) {
 
 	defer wg.Done()
 
@@ -45,7 +46,7 @@ func processLocation(loc model.Location, services *service.Service, wg *sync.Wai
 	services.ForecastService.Save(&forecast)
 }
 
-func getLocationsData() model.Locations {
+func getLocationsData() types.Locations {
 	jsonFile, err := os.Open("locations.json")
 	if err != nil {
 		fmt.Println(err)
@@ -53,7 +54,7 @@ func getLocationsData() model.Locations {
 	fmt.Println("Successfully Opened locations.json")
 	defer jsonFile.Close()
 	byteValue, _ := io.ReadAll(jsonFile)
-	var locations model.Locations
+	var locations types.Locations
 	json.Unmarshal(byteValue, &locations)
 	return locations
 }

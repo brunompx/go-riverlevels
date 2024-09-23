@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/brunompx/go-riverlevels/model"
 	"github.com/brunompx/go-riverlevels/repository"
+	"github.com/brunompx/go-riverlevels/types"
 )
 
 // web:
@@ -22,7 +22,7 @@ const BaseUrlProno = "https://alerta.ina.gob.ar/pub/datos/datosProno"
 // https://alerta.ina.gob.ar/pub/datos/datos&timeStart=2023-07-19&timeEnd=2024-07-17&seriesId=34&siteCode=34&varId=2&format=json
 const BaseUrl = "https://alerta.ina.gob.ar/pub/datos/datos"
 
-func GetData(loc model.Location) model.ForecastResponse {
+func GetData(loc types.Location) types.ForecastResponse {
 	parameters := buildParametersMap(loc)
 	url := buildUrl(BaseUrlProno, parameters)
 
@@ -47,10 +47,10 @@ func GetData(loc model.Location) model.ForecastResponse {
 
 }
 
-func unmarshallForecastResponse(jsonBytes []byte) model.ForecastResponse {
+func unmarshallForecastResponse(jsonBytes []byte) types.ForecastResponse {
 
 	//unmarshall json response to ForecastResponse
-	var forecastResponse model.ForecastResponse
+	var forecastResponse types.ForecastResponse
 	err2 := json.Unmarshal(jsonBytes, &forecastResponse)
 	if err2 != nil {
 		fmt.Println(err2)
@@ -75,7 +75,7 @@ func buildUrl(baseUrl string, parameters map[string]string) string {
 	return url.String()
 }
 
-func buildParametersMap(loc model.Location) map[string]string {
+func buildParametersMap(loc types.Location) map[string]string {
 
 	timeStart := time.Now().AddDate(0, 0, -10).Format("2006-01-02")
 	timeEnd := time.Now().AddDate(0, 0, 40).Format("2006-01-02")
