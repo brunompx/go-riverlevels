@@ -11,7 +11,7 @@ import (
 	"github.com/brunompx/go-riverlevels/types"
 )
 
-func SaveDataAsJsonFile(data []byte, loc types.Location) {
+func SaveDataAsJsonFile(data []byte, loc types.Station) {
 	fileName := "data-" + loc.SeriesId + "-" + loc.SiteCode + "-" + loc.CorId + "-" + loc.CalId + ".json"
 	var prettyJSON bytes.Buffer
 	if len(data) > 0 {

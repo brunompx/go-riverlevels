@@ -2,36 +2,55 @@
     "locations": [
 
         {
+            "type": "forecast",
             "seriesId": "3412",
             "calId": "289"
         },
         {
+            "type": "forecast",
             "seriesId": "26221",
             "calId": "434"
         },
         {
+            "type": "forecast",
             "seriesId": "1542",
             "calId": "289"
         },
         {
+            "type": "forecast",
             "seriesId": "26217",
             "calId": "434"
         },
         {
+            "type": "forecast",
             "seriesId": "3524",
             "calId": "289"
         },
         {
+            "type": "forecast",
             "seriesId": "26215",
             "calId": "434"
         },
         {
+            "type": "forecast",
             "seriesId": "3527",
             "calId": "289"
         },
         {
+            "type": "forecast",
             "seriesId": "26212",
             "calId": "434"
         }
+        ,
+        {
+            "type": "measure",
+            "seriesId": "34"
+        }
+        ,
+        {
+            "type": "measure",
+            "seriesId": "30"
+        }
+
     ]
 }

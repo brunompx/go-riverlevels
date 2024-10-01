@@ -22,8 +22,8 @@ const BaseUrlProno = "https://alerta.ina.gob.ar/pub/datos/datosProno"
 // https://alerta.ina.gob.ar/pub/datos/datos&timeStart=2023-07-19&timeEnd=2024-07-17&seriesId=34&siteCode=34&varId=2&format=json
 const BaseUrl = "https://alerta.ina.gob.ar/pub/datos/datos"
 
-func GetData(loc types.Location) types.ForecastResponse {
-	parameters := buildParametersMap(loc)
+func GetForecastData(st types.Station) types.ForecastResponse {
+	parameters := buildParametersMap(st)
 	url := buildUrl(BaseUrlProno, parameters)
 
 	response := GetDataFromAPI(url)
@@ -33,7 +33,7 @@ func GetData(loc types.Location) types.ForecastResponse {
 	if len(forecastResponse.Data) > 0 {
 
 		//Save data TO file, for manual validation, delete afterwards
-		repository.SaveDataAsJsonFile(response, loc)
+		repository.SaveDataAsJsonFile(response, st)
 
 		return forecastResponse
 	}
@@ -41,7 +41,7 @@ func GetData(loc types.Location) types.ForecastResponse {
 	responseWeb := GetDataFromWeb(url)
 
 	//Save data TO file, for manual validation, delete afterwards
-	repository.SaveDataAsJsonFile(responseWeb, loc)
+	repository.SaveDataAsJsonFile(responseWeb, st)
 
 	return unmarshallForecastResponse(responseWeb)
 
@@ -75,7 +75,7 @@ func buildUrl(baseUrl string, parameters map[string]string) string {
 	return url.String()
 }
 
-func buildParametersMap(loc types.Location) map[string]string {
+func buildParametersMap(loc types.Station) map[string]string {
 
 	timeStart := time.Now().AddDate(0, 0, -10).Format("2006-01-02")
 	timeEnd := time.Now().AddDate(0, 0, 40).Format("2006-01-02")

@@ -1,24 +1,24 @@
 package repository
 
 import (
-	"github.com/brunompx/go-riverlevels/model"
+	"github.com/brunompx/go-riverlevels/types"
 	"gorm.io/gorm"
 )
 
 type ForecastRepository interface {
-	FindAll() ([]*model.Forecast, error)
-	FindByID(id int) (*model.Forecast, error)
-	Save(forecast *model.Forecast) error
-	Update(forecast *model.Forecast) error
-	FindForecast(forecast *model.Forecast) (model.Forecast, error)
+	FindAll() ([]*types.Forecast, error)
+	FindByID(id int) (*types.Forecast, error)
+	Save(forecast *types.Forecast) error
+	Update(forecast *types.Forecast) error
+	FindForecast(forecast *types.Forecast) (types.Forecast, error)
 }
 
 type MeasureRepository interface {
-	FindAll() ([]*model.Forecast, error)
-	FindByID(id int) (*model.Forecast, error)
-	Save(forecast *model.Forecast) error
-	Update(forecast *model.Forecast) error
-	FindForecast(forecast *model.Forecast) (model.Forecast, error)
+	FindAll() ([]*types.Forecast, error)
+	FindByID(id int) (*types.Forecast, error)
+	Save(forecast *types.Forecast) error
+	Update(forecast *types.Forecast) error
+	FindForecast(forecast *types.Forecast) (types.Forecast, error)
 }
 
 type Repositories struct {

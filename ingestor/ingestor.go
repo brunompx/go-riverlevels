@@ -14,6 +14,9 @@ import (
 	"github.com/brunompx/go-riverlevels/service"
 )
 
+const StTypeForecast = "forecast"
+const StTypeMeasure = "measure"
+
 func IngestData(services *service.Service) {
 
 	//TODO save data from file, remove this test when we can get consistent data from alerta.ina.gob.ar
@@ -21,40 +24,52 @@ func IngestData(services *service.Service) {
 	//services.ForecastService.Save(&fore)
 	// fin TODO esto es un test borrar despues
 
-	locations := getLocationsData()
+	stations := getStationsData()
 
 	now := time.Now()
-	fmt.Println("locations cargadas")
+	fmt.Println("stations cargadas")
 
 	var wg sync.WaitGroup
-	wg.Add(len(locations.Locations))
-	for _, location := range locations.Locations {
-		loc := location
-		go processLocation(loc, services, &wg)
+	wg.Add(len(stations.Stations))
+	for _, station := range stations.Stations {
+		st := station
+		go processLocation(st, services, &wg)
 	}
 	wg.Wait()
 
 	fmt.Println("Tardo en totral: ", time.Since(now))
 }
 
-func processLocation(loc types.Location, services *service.Service, wg *sync.WaitGroup) {
+func processLocation(st types.Station, services *service.Service, wg *sync.WaitGroup) {
 
 	defer wg.Done()
 
-	forecastResponse := retriever.GetData(loc)
+	if st.StationType == StTypeForecast {
+		processForecastLoc(st, services)
+	} else if st.StationType == StTypeMeasure {
+		processMeasureLoc(st, services)
+	}
+}
+
+func processForecastLoc(st types.Station, services *service.Service) {
+	forecastResponse := retriever.GetForecastData(st)
 	forecast := forecastResponse.NormalizeToForecast()
 	services.ForecastService.Save(&forecast)
 }
 
-func getLocationsData() types.Locations {
-	jsonFile, err := os.Open("locations.json")
+func processMeasureLoc(st types.Station, services *service.Service) {
+
+}
+
+func getStationsData() types.Stations {
+	jsonFile, err := os.Open("stations.json")
 	if err != nil {
 		fmt.Println(err)
 	}
 	fmt.Println("Successfully Opened locations.json")
 	defer jsonFile.Close()
 	byteValue, _ := io.ReadAll(jsonFile)
-	var locations types.Locations
-	json.Unmarshal(byteValue, &locations)
-	return locations
+	var stations types.Stations
+	json.Unmarshal(byteValue, &stations)
+	return stations
 }
