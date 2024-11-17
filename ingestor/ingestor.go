@@ -58,7 +58,9 @@ func processForecastLoc(st types.Station, services *service.Service) {
 }
 
 func processMeasureLoc(st types.Station, services *service.Service) {
-
+	measureResponse := retriever.GetMeasuretData(st)
+	measure := measureResponse.NormalizeToMeasure()
+	services.MeasureService.Save(&measure)
 }
 
 func getStationsData() types.Stations {
